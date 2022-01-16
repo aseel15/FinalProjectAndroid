@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_add_person.xml" value="0.22" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_add_trip_admin.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_all_user.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_control_trip_admin.xml" value="0.10960144927536232" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_delete_reserve_trip_admin.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_detail_trip.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.165625" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main2.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_registration.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_trips.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/styling.xml" value="0.16197916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

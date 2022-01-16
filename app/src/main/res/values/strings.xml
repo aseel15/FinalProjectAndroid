@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Plaza Hotel</string>
+    <string name="registration_activity">Create new account</string>
+    <string name="passwordLink">Forget your password?</string>
+    <string name="login_activity">Already have an account</string>
+
+</resources>
