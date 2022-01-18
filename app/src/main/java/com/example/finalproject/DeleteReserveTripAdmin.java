@@ -3,11 +3,9 @@ package com.example.finalproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,21 +16,21 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.finalproject.model.Trip;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 public class DeleteReserveTripAdmin extends AppCompatActivity {
-    TextView edtName,edtDate,edtDesc,edtPrice,edtAdduser;
-    EditText edtNumber,edtID;
-    String tripData;
-    Trip tripObj;
-    int user_id,tripID,totalPrice;
+    private TextView edtName,edtDate,edtDesc,edtPrice,edtAdduser;
+    private EditText edtNumber,edtID;
+    private String tripData;
+    private Trip tripObj;
+    private int user_id,tripID,totalPrice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,38 +197,26 @@ public class DeleteReserveTripAdmin extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // method to handle errors.
                 Toast.makeText(DeleteReserveTripAdmin.this,
                         "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
             public String getBodyContentType() {
-                // as we are passing data in the form of url encoded
-                // so we are passing the content type below
                 return "application/x-www-form-urlencoded; charset=UTF-8";
             }
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-
-                // below line we are creating a map for storing
-                // our values in key and value pair.
-                Map<String, String> params = new HashMap<String, String>();
-
-                // on below line we are passing our
-                // key and value pair to our parameters.
-
+               Map<String, String> params = new HashMap<String, String>();
                 params.put("user_id", String.valueOf(user_id));
                 params.put("tripID", String.valueOf(tripID));
                 params.put("totalprice", String.valueOf(totalPrice));
 
-                // at last we are returning our params.
+
                 return params;
             }
         };
-        // below line is to make
-        // a json object request.
         queue.add(request);
     }
 

@@ -105,8 +105,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteX="88dp"
-        tools:layout_editor_absoluteY="522dp"
         android:onClick="btnClkAddTrip"
         android:backgroundTint="@color/blue"/>
 

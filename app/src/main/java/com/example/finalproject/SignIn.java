@@ -21,10 +21,10 @@ import org.json.JSONObject;
 
 
 public class SignIn extends AppCompatActivity {
-    EditText  edtPassword ,edtEmail;
-    CheckBox edtRemember;
-    int id;
-    int role;
+    private EditText  edtPassword ,edtEmail;
+    private CheckBox edtRemember;
+    private int id;
+    private int role;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +42,10 @@ public class SignIn extends AppCompatActivity {
         super.onStart();
         SharedPreferences preferences=getSharedPreferences("session",MODE_PRIVATE);
         int session=preferences.getInt("login",-1);
-        if (session!=-1){
-            Intent intent=new Intent(SignIn.this,Registration.class);
-            startActivity(intent);
-        }
+//        if (session!=-1){
+//            Intent intent=new Intent(SignIn.this,Registration.class);
+//            startActivity(intent);
+//        }
          {
             SharedPreferences remember = getSharedPreferences("checkBox", MODE_PRIVATE);
             String rem = remember.getString("remember", "");

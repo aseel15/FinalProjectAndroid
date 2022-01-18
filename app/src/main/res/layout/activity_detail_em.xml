@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@android:style/Widget.Holo.ScrollView"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailActivityEm">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".DetailActivityEm">
+
+
+        <TextView
+            android:id="@+id/txtTryEm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/amarante"
+            android:text="Details"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:typeface="serif" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/amarante"
+                android:text="The Id of User"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/edtUserId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="35dp"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="@font/amarante"
+                android:onClick="btnEnterOnClick"
+                android:text="Enter"
+                android:textStyle="bold"
+                app:backgroundTint="#10B5E3" />
+
+        </LinearLayout>
+
+
+        <ListView
+            android:id="@+id/listViewEm"
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginLeft="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="36dp"
+            android:layout_marginBottom="12dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/amarante"
+            android:onClick="btnReserveOnClick"
+            android:text="Reserve"
+            app:backgroundTint="#10B5E3" />
+
+    </LinearLayout>
+
+</ScrollView>

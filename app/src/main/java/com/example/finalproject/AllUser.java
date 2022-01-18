@@ -2,10 +2,8 @@ package com.example.finalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.finalproject.model.Person;
 
 import org.json.JSONArray;
 import org.json.JSONException;

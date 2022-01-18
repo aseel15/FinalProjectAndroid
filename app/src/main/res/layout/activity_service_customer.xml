@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".ServiceActivityCustomer">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/databa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/amarante"
+            android:text="The Cost of Each Service is 5$"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold|italic" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Choose the id room"
+                android:textColor="#000000" />
+            <Spinner
+                android:id="@+id/spinnerRoomId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:text="Choose the service"
+                android:textColor="#000000" />
+            <Spinner
+                android:id="@+id/spinnerService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="10dp"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ListView
+                android:layout_width="200dp"
+                android:layout_height="309dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/listViewServices"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="7dp"
+                android:fontFamily="@font/archivo_black"
+                android:text="long click to delete item "
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:onClick="btnRequestClick"
+            android:text="request services"
+            app:backgroundTint="#10B5E3" />
+
+    </LinearLayout>
+
+
+</ScrollView>

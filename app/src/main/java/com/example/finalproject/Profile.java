@@ -25,7 +25,7 @@ import java.util.Map;
 public class Profile extends AppCompatActivity {
     SharedPreferences preferences;
     private int user_id,totalPayment=0;
-    private TextView edtUserID, edtUserName,edtRooms,edtParties,edtTrips,edtPayment;
+    private TextView edtUserID, edtUserName,edtRooms,edtParties,edtTrips,edtPayment,edtEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +39,16 @@ public class Profile extends AppCompatActivity {
         edtParties=findViewById(R.id.GivenParties);
         edtPayment=findViewById(R.id.Payments);
         edtTrips=findViewById(R.id.GivenTrips);
+        edtEmail=findViewById(R.id.Email);
 
         edtUserID.setText("ID: "+ String.valueOf(user_id));
-        GetUserName();
+        GetPersonalInfo();
         getData();
 
 
     }
 
-    public void GetUserName(){
+    public void GetPersonalInfo(){
         String url = "http://10.0.2.2:80/FinalProject/Search.php?user_id="+user_id;
         RequestQueue queue = Volley.newRequestQueue(Profile.this);
         StringRequest request = new StringRequest(Request.Method.GET, url, new com.android.volley.Response.Listener<String>() {
@@ -60,6 +61,7 @@ public class Profile extends AppCompatActivity {
                     if (jsonObject.getString("error").equals("false")){
 
                         edtUserName.setText("Name: "+jsonObject.getString("username"));
+                        edtEmail.setText("Email: "+jsonObject.getString("email"));
 
                 }
 
@@ -146,25 +148,31 @@ public class Profile extends AppCompatActivity {
                 try {
 
                     JSONObject jsonObject = new JSONObject(response);
-
-//                    if (!jsonObject.getString("roomName").equals("false")){
-//                        edtRooms.setText(jsonObject.getString("roomName"));
-//                        totalPayment+=Integer.parseInt(jsonObject.getString("roomPrice"));
-//                    }else
-//                        edtRooms.setText("There is no reserved rooms");
-//
-//                    if (!jsonObject.getString("partyName").equals("false")){
-//                        edtParties.setText(jsonObject.getString("partyName"));
-//                        totalPayment+=Integer.parseInt(jsonObject.getString("partyPrice"));
-//                    }else
-//                        edtRooms.setText("There is no reserved parties");
-
                     if (!jsonObject.getString("tripName").equals("false")){
 
                         edtTrips.setText(jsonObject.getString("tripName"));
                         totalPayment+=Integer.parseInt(jsonObject.getString("tripPrice"));
                     }else
                         edtTrips.setText("There is not reserved trips");
+
+                    Toast.makeText(Profile.this,jsonObject.getString("roomName"),Toast.LENGTH_SHORT).show();
+                    if (!jsonObject.getString("roomName").equals("false")){
+                        edtRooms.setText(jsonObject.getString("roomName"));
+                        totalPayment+=Integer.parseInt(jsonObject.getString("roomPrice"));
+                    }else
+                        edtRooms.setText("There is no reserved rooms");
+
+
+                    if (!jsonObject.getString("servicePrice").equals("false")){
+                        totalPayment+=Integer.parseInt(jsonObject.getString("servicePrice"));}
+
+
+//                    if (!jsonObject.getString("partyName").equals("false")){
+//                        edtParties.setText(jsonObject.getString("partyName"));
+//                        totalPayment+=Integer.parseInt(jsonObject.getString("partyPrice"));
+//                    }else
+//                        edtRooms.setText("There is no reserved parties");
+
 
                     edtPayment.setText(String.valueOf(totalPayment));
                 }   catch (JSONException e) {

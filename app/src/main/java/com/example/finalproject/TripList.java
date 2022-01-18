@@ -21,6 +21,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.example.finalproject.model.Trip;
 import com.google.gson.Gson;
 
 

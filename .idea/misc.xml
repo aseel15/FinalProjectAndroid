@@ -3,18 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/drawable/ic_toiletries.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/font/amarante.xml" value="0.14351851851851852" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/font/archivo_black.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_add_person.xml" value="0.22" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_add_trip_admin.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_all_user.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_control_trip_admin.xml" value="0.10960144927536232" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_delete_reserve_trip_admin.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_detail.xml" value="0.1796875" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_detail_em.xml" value="0.1640625" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_detail_trip.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.165625" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_registration.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_room.xml" value="0.1796875" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_service_customer.xml" value="0.1640625" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/activity_trips.xml" value="0.1" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/card_caption_em.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/card_caption_service.xml" value="0.1640625" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/card_captioned_image.xml" value="0.1640625" />
+        <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/custom_layout_dropdown.xml" value="0.1640625" />
         <entry key="..\:/Users/zhdto/AndroidStudioProjects/FinalProject/app/src/main/res/layout/styling.xml" value="0.16197916666666667" />
       </map>
     </option>

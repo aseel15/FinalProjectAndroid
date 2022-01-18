@@ -18,6 +18,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.finalproject.model.Trip;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -27,13 +28,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class detailTrip extends AppCompatActivity {
-    TextView edtName,edtDate,edtDesc,edtPrice;
-    EditText edtNumber;
-    String tripData;
-    Trip tripObj;
-    int user_id,tripID;
-    Button clkReserve;
-    Button clkDelete;
+    private TextView edtName,edtDate,edtDesc,edtPrice;
+    private EditText edtNumber;
+    private String tripData;
+    private Trip tripObj;
+    private int user_id,tripID;
+    private Button clkReserve;
+    private Button clkDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

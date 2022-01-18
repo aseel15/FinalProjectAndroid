@@ -105,39 +105,29 @@ public class AddTripAdmin extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // method to handle errors.
                 Toast.makeText(AddTripAdmin.this,
                         "Fail to get response = " + error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
             public String getBodyContentType() {
-                // as we are passing data in the form of url encoded
-                // so we are passing the content type below
                 return "application/x-www-form-urlencoded; charset=UTF-8";
             }
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
 
-                // below line we are creating a map for storing
-                // our values in key and value pair.
                 Map<String, String> params = new HashMap<String, String>();
 
-                // on below line we are passing our
-                // key and value pair to our parameters.
                 params.put("name", TripName);
                 params.put("date", date);
                 params.put("price", String.valueOf(Price));
                 params.put("description", Description);
 
 
-                // at last we are returning our params.
                 return params;
             }
         };
-        // below line is to make
-        // a json object request.
         queue.add(request);
     }
 

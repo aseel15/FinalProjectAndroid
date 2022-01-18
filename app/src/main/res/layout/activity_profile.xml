@@ -19,48 +19,61 @@
           android:layout_width="match_parent"
           android:layout_height="match_parent">
 
+
           <ImageView
               android:id="@+id/imageView"
-              android:layout_width="180dp"
-              android:layout_height="94dp"
-              android:layout_marginTop="40dp"
+              android:layout_width="249dp"
+              android:layout_height="91dp"
+              android:layout_marginTop="16dp"
               app:layout_constraintEnd_toEndOf="parent"
-              app:layout_constraintHorizontal_bias="0.497"
               app:layout_constraintStart_toStartOf="parent"
               app:layout_constraintTop_toTopOf="parent"
               app:srcCompat="@drawable/image" />
+          <TextView
+              android:id="@+id/UserId"
+              android:layout_width="231dp"
+              android:layout_height="33dp"
+              android:layout_marginTop="15dp"
+              android:fontFamily="sans-serif-condensed"
+              android:gravity="center"
+              android:textSize="25dp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-        <TextView
-        android:id="@+id/UserName"
-        android:layout_width="236dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+          <TextView
+              android:id="@+id/UserName"
+              android:layout_width="232dp"
+              android:layout_height="32dp"
+              android:layout_marginTop="10dp"
+              android:fontFamily="sans-serif-condensed"
+              android:gravity="center"
+              android:textSize="25dp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/UserId" />
 
-    <TextView
-        android:id="@+id/UserId"
-        android:layout_width="236dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="5dp"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserName" />
+          <TextView
+              android:id="@+id/Email"
+              android:layout_width="231dp"
+              android:layout_height="33dp"
+              android:layout_marginTop="10dp"
+              android:fontFamily="sans-serif-condensed"
+              android:gravity="center"
+              android:textSize="25dp"
+              android:textStyle="bold"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/UserName" />
+
 
     <TextView
         android:id="@+id/ReservedRooms"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="left"
         android:textSize="25dp"
@@ -69,13 +82,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UserId" />
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
 
           <TextView
               android:id="@+id/GivenRooms"
               android:layout_width="166dp"
               android:layout_height="wrap_content"
-              android:layout_marginTop="24dp"
+              android:layout_marginTop="30dp"
               android:fontFamily="sans-serif-condensed"
               android:gravity="left"
               android:textSize="20dp"
@@ -83,7 +96,7 @@
               app:layout_constraintEnd_toEndOf="parent"
               app:layout_constraintHorizontal_bias="0.877"
               app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toBottomOf="@+id/UserId" />
+              app:layout_constraintTop_toBottomOf="@+id/Email" />
 
           <TextView
               android:id="@+id/ReservedParties"
