@@ -48,6 +48,32 @@ public class Profile extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("username",edtUserName.getText().toString());
+        outState.putString("userid",edtUserID.getText().toString());
+        outState.putString("rooms",edtRooms.getText().toString());
+        outState.putString("parties",edtParties.getText().toString());
+        outState.putString("payment",edtPayment.getText().toString());
+        outState.putString("trips",edtTrips.getText().toString());
+        outState.putString("email",edtEmail.getText().toString());
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        edtUserName.setText(savedInstanceState.getString("username"));
+        edtUserID.setText(savedInstanceState.getString("userid"));
+        edtRooms.setText(savedInstanceState.getString("rooms"));
+        edtParties.setText(savedInstanceState.getString("parties"));
+        edtPayment.setText(savedInstanceState.getString("payment"));
+        edtTrips.setText(savedInstanceState.getString("trips"));
+        edtEmail.setText(savedInstanceState.getString("email"));
+    }
+
     public void GetPersonalInfo(){
         String url = "http://10.0.2.2:80/FinalProject/Search.php?user_id="+user_id;
         RequestQueue queue = Volley.newRequestQueue(Profile.this);

@@ -59,6 +59,8 @@ public class SignIn extends AppCompatActivity {
         }
 
     }
+
+
     public void btnClkForRegister(View view) {
         Intent intent =new Intent(SignIn.this,Registration.class);
         startActivity(intent);

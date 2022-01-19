@@ -15,38 +15,56 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Profile"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".AllUser"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".DeleteReserveTripAdmin"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".ControlTripAdmin"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".AddTripAdmin"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".addPersonAdmin"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".detailTrip"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".TripList"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".Registration"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".SignIn"
-            android:exported="true" />
+            android:exported="true"/>
+
+        <activity
+            android:name=".DetailActivityEm"
+            android:exported="true"/>
+        <activity
+            android:name=".EmployeeResRoom"
+            android:exported="true"/>
+        <activity
+            android:name=".AcceptServiceByEmployee"
+            android:exported="true"/>
+        <activity
+            android:name=".ServiceActivityCustomer"
+            android:exported="true"/>
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"/>
         <activity
             android:name=".Logo"
-            android:exported="true"
-            android:screenOrientation="landscape">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

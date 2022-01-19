@@ -34,6 +34,7 @@ public class AcceptServiceByEmployee extends AppCompatActivity {
         setContentView(R.layout.activity_accept_service_by_employee);
         queue = Volley.newRequestQueue(this);
         recyclerView=findViewById(R.id.service_recycler);
+
        /* Intent intent = getIntent();
         services=(ArrayList<String>) intent.getSerializableExtra("userRequest");
         String idStr=intent.getStringExtra("userId");
