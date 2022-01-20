@@ -58,12 +58,29 @@ public class MainActivity extends AppCompatActivity {
         checkOut = findViewById(R.id.edtCheckOut);
         queue = Volley.newRequestQueue(this);
         queue1 = Volley.newRequestQueue(this);
+        if (savedInstanceState!=null)
+            onRestoreInstanceState(savedInstanceState);
         populateAllData();
         removeDeadLineCheckOut();
         populateReservedRooms();
 
 
 
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("DateCheckIn",checkIn.getText().toString());
+        outState.putString("DateCheckOut",checkOut.getText().toString());
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        checkIn.setText(savedInstanceState.getString("DateCheckIn"));
+        checkOut.setText(savedInstanceState.getString("DateCheckOut"));
     }
     public void populateAllData(){
 

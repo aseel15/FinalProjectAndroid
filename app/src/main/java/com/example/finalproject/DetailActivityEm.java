@@ -52,16 +52,45 @@ public class DetailActivityEm extends AppCompatActivity {
 
         queue=Volley.newRequestQueue(this);
         userIds=new ArrayList<>();
+
         Intent intent = getIntent();
-        textTry=findViewById(R.id.txtTryEm);
-        edtUserId=findViewById(R.id.edtUserId);
-        String item = intent.getStringExtra("roomNum");
-        dateCheckIn=intent.getStringExtra("checkInDate");
-        dateCheckOut=intent.getStringExtra("checkOutDate");
-        roomNumber = Integer.parseInt(item);
-        roomsList=(List<Room>) getIntent().getSerializableExtra("arrayList");
-        populateData(roomNumber);
+        if (savedInstanceState!=null){
+            onRestoreInstanceState(savedInstanceState);
+        }
+        else {
+            textTry = findViewById(R.id.txtTryEm);
+            edtUserId = findViewById(R.id.edtUserId);
+            String item = intent.getStringExtra("roomNum");
+            dateCheckIn = intent.getStringExtra("checkInDate");
+            dateCheckOut = intent.getStringExtra("checkOutDate");
+            roomNumber = Integer.parseInt(item);
+            roomsList = (List<Room>) getIntent().getSerializableExtra("arrayList");
+        }populateData(roomNumber);
         populateUser();
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("DateCheckIn",dateCheckIn);
+        outState.putString("DateCheckOut",dateCheckOut);
+        outState.putInt("roomNumber",roomNumber);
+        outState.putInt("days",days);
+        outState.putString("textTry",textTry.getText().toString());
+        outState.putString("edtUserID",edtUserId.getText().toString());
+        outState.putInt("id",idAdded);
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        dateCheckIn=savedInstanceState.getString("DateCheckIn");
+        dateCheckOut=savedInstanceState.getString("DateCheckOut");
+        roomNumber=savedInstanceState.getInt("roomNumber");
+        days=savedInstanceState.getInt("days");
+        textTry.setText(savedInstanceState.getString("textTry"));
+        edtUserId.setText(savedInstanceState.getString("edtUserID"));
+        idAdded=savedInstanceState.getInt("id");
     }
     public Room getRoomObject(int objectNumber){
         for(int i=0;i<roomsList.size();i++)

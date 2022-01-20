@@ -42,13 +42,42 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         Intent intent = getIntent();
         textTry=findViewById(R.id.txtTry);
-        String item = intent.getStringExtra("roomNum");
-        dateCheckIn=intent.getStringExtra("checkInDate");
-        dateCheckOut=intent.getStringExtra("checkOutDate");
-        roomNumber = Integer.parseInt(item);
-        roomsList=(List<Room>) getIntent().getSerializableExtra("arrayList");
+
+        if (savedInstanceState!=null){
+            onRestoreInstanceState(savedInstanceState);
+        }
+        else {
+            String item = intent.getStringExtra("roomNum");
+            dateCheckIn = intent.getStringExtra("checkInDate");
+            dateCheckOut = intent.getStringExtra("checkOutDate");
+            roomNumber = Integer.parseInt(item);
+            roomsList = (List<Room>) getIntent().getSerializableExtra("arrayList");
+        }
         populateData(roomNumber);
 
+
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("DateCheckIn",dateCheckIn);
+        outState.putString("DateCheckOut",dateCheckOut);
+        outState.putInt("roomNumber",roomNumber);
+        outState.putInt("days",days);
+        outState.putString("textTry",textTry.getText().toString());
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        dateCheckIn=savedInstanceState.getString("DateCheckIn");
+        dateCheckOut=savedInstanceState.getString("DateCheckOut");
+        roomNumber=savedInstanceState.getInt("roomNumber");
+        days=savedInstanceState.getInt("days");
+        textTry.setText(savedInstanceState.getString("textTry"));
 
     }
     public Room getRoomObject(int objectNumber){
