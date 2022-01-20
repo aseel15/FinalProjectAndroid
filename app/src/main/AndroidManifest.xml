@@ -36,7 +36,8 @@
             android:exported="true"/>
         <activity
             android:name=".TripList"
-            android:exported="true"/>
+            android:exported="true"
+            />
         <activity
             android:name=".Registration"
             android:exported="true"/>

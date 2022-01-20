@@ -35,6 +35,7 @@ public class AllUser extends AppCompatActivity {
         DisplayUsers();
     }
 
+
     public void DisplayUsers(){
       String url = "http://10.0.2.2:80/FinalProject/Search.php";
 

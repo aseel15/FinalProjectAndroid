@@ -43,14 +43,56 @@ public class DeleteReserveTripAdmin extends AppCompatActivity {
         edtNumber=findViewById(R.id.Number);
         edtID=findViewById(R.id.UserID);
         edtAdduser=findViewById(R.id.addUser);
+       if (savedInstanceState!=null){
+            onRestoreInstanceState(savedInstanceState);
+        }
+       else{
         Intent intent=getIntent();
         tripData=intent.getStringExtra("trip");
         Gson gson = new Gson();
         tripObj = gson.fromJson(tripData, Trip.class);
         tripID=tripObj.getId();
         fillTripData();
+       }
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("Name",edtName.getText().toString());
+        outState.putString("Date",edtDate.getText().toString());
+        outState.putString("Desc",edtDesc.getText().toString());
+        outState.putString("price",edtPrice.getText().toString());
+        outState.putString("AddUser",edtAdduser.getText().toString());
+        outState.putString("ID",edtID.getText().toString());
+        outState.putString("Number",edtNumber.getText().toString());
+
+        outState.putString("tripData",tripData);
+        outState.putInt("user_id",user_id);
+        outState.putInt("tripID",tripID);
+        outState.putInt("totalPrice",totalPrice);
+
+
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        edtName.setText(savedInstanceState.getString("Name"));
+        edtID.setText(savedInstanceState.getString("ID"));
+        edtDate.setText(savedInstanceState.getString("Date"));
+        edtDesc.setText(savedInstanceState.getString("Desc"));
+        edtPrice.setText(savedInstanceState.getString("price"));
+        edtAdduser.setText(savedInstanceState.getString("AddUser"));
+        edtNumber.setText(savedInstanceState.getString("Number"));
+        tripData=savedInstanceState.getString("Data");
+        user_id=savedInstanceState.getInt("user_id");
+        tripID=savedInstanceState.getInt("tripID");
+        totalPrice=savedInstanceState.getInt("totalPrice");
+
+    }
     public void fillTripData(){
 
         edtName.setText(tripObj.getName());

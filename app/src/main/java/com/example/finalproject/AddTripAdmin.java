@@ -39,6 +39,9 @@ public class AddTripAdmin extends AppCompatActivity {
         edtPrice = findViewById(R.id.Price);
         edtDescription=findViewById(R.id.Description);
 
+        if (savedInstanceState!=null)
+            onRestoreInstanceState(savedInstanceState);
+
         edtDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +49,7 @@ public class AddTripAdmin extends AppCompatActivity {
                 final int year=cal.get(Calendar.YEAR);
                 final int month=cal.get(Calendar.MONTH);
                 final int day=cal.get(Calendar.DAY_OF_MONTH);
+
 
                 DatePickerDialog dialog= new DatePickerDialog(AddTripAdmin.this, new DatePickerDialog.OnDateSetListener() {
                     public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -62,6 +66,19 @@ public class AddTripAdmin extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("Date",edtDate.getText().toString());
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        edtDate.setText(savedInstanceState.getString("Date"));
+           }
 
     public void btnClkAddTrip(View view) {
         String TripName = edtTripName.getText().toString();

@@ -30,7 +30,6 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
         preferences=getSharedPreferences("session",MODE_PRIVATE);
         user_id=preferences.getInt("login",-1);
         edtUserName=findViewById(R.id.UserName);
@@ -41,11 +40,15 @@ public class Profile extends AppCompatActivity {
         edtTrips=findViewById(R.id.GivenTrips);
         edtEmail=findViewById(R.id.Email);
 
-        edtUserID.setText("ID: "+ String.valueOf(user_id));
-        GetPersonalInfo();
-        getData();
+        if(savedInstanceState!=null){
 
-
+           onRestoreInstanceState(savedInstanceState);
+        }
+         else {
+            edtUserID.setText("ID: " + String.valueOf(user_id));
+            GetPersonalInfo();
+            getData();
+        }
     }
 
     @Override
@@ -119,8 +122,6 @@ public class Profile extends AppCompatActivity {
                 try {
 
                     JSONObject jsonObject = new JSONObject(response);
-                    Toast.makeText(Profile.this,
-                            jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
 
                     SharedPreferences remember = getSharedPreferences("checkBox", MODE_PRIVATE);
                     SharedPreferences.Editor editor = remember.edit();

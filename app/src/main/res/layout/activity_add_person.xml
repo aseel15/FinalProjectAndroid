@@ -7,6 +7,16 @@
     tools:context=".addPersonAdmin"
     android:background="@color/zumthor">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView"
@@ -97,7 +107,8 @@
         tools:layout_editor_absoluteY="522dp"
         android:onClick="btnClkRegister"
         android:backgroundTint="@color/blue"/>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
 
 

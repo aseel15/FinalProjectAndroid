@@ -48,9 +48,12 @@ public class detailTrip extends AppCompatActivity {
         clkReserve=findViewById(R.id.reserve);
         clkDelete=findViewById(R.id.Delete);
 
+        if (savedInstanceState!=null){
+            onRestoreInstanceState(savedInstanceState);
+        }
+        else{
         SharedPreferences preferences=getSharedPreferences("session",MODE_PRIVATE);
         user_id=preferences.getInt("login",-1);
-
         Intent intent=getIntent();
         tripData=intent.getStringExtra("trip");
         Gson gson = new Gson();
@@ -58,6 +61,42 @@ public class detailTrip extends AppCompatActivity {
         tripID=tripObj.getId();
         checkReserved();
         fillTripData();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        outState.putString("Name",edtName.getText().toString());
+        outState.putString("Date",edtDate.getText().toString());
+        outState.putString("Desc",edtDesc.getText().toString());
+        outState.putString("price",edtPrice.getText().toString());
+        outState.putString("Number",edtNumber.getText().toString());
+
+        outState.putString("tripData",tripData);
+        outState.putInt("user_id",user_id);
+        outState.putInt("tripID",tripID);
+
+        outState.putInt("invisibilityRes",clkReserve.getVisibility());
+        outState.putInt("invisibilityDel",clkDelete.getVisibility());
+
+        super.onSaveInstanceState(outState);
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        edtName.setText(savedInstanceState.getString("Name"));
+        edtDate.setText(savedInstanceState.getString("Date"));
+        edtDesc.setText(savedInstanceState.getString("Desc"));
+        edtPrice.setText(savedInstanceState.getString("price"));
+        edtNumber.setText(savedInstanceState.getString("Number"));
+        tripData=savedInstanceState.getString("Data");
+        user_id=savedInstanceState.getInt("user_id");
+        tripID=savedInstanceState.getInt("tripID");
+        clkReserve.setVisibility(savedInstanceState.getInt("invisibilityRes"));
+        clkDelete.setVisibility(savedInstanceState.getInt("invisibilityDel"));
+
     }
 
     public void checkReserved(){
@@ -93,7 +132,6 @@ public class detailTrip extends AppCompatActivity {
 
 
     public void fillTripData(){
-        String name=tripObj.getName();
       edtName.setText(tripObj.getName());
         edtDate.setText("Date of trip: "+tripObj.getDate());
        edtDesc.setText("About: \n\n"+tripObj.getDescription());

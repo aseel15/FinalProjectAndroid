@@ -35,6 +35,7 @@ public class addPersonAdmin extends AppCompatActivity {
     }
 
 
+
     public void btnClkRegister(View view) {
         String UserName = edtUserName.getText().toString();
         String Email = edtEmail.getText().toString();

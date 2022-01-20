@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -30,6 +31,8 @@ import java.util.ArrayList;
 
 public class TripList extends AppCompatActivity {
     private RequestQueue queue;
+    private ListView lst;
+    private String[] arr;
 
 
     @Override
@@ -37,11 +40,13 @@ public class TripList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trips);
         queue = Volley.newRequestQueue(this);
-        populateList();
+        lst = findViewById(R.id.ListTrip);
+
+         populateList();
     }
 
+
     public void populateList() {
-        ListView lst = findViewById(R.id.ListTrip);
         String url = "http://10.0.2.2:80/FinalProject/trip.php";
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url,
@@ -57,6 +62,7 @@ public class TripList extends AppCompatActivity {
                 tripObj = new Trip[response.length()];
                 for (int i = 0; i < response.length(); i++) {
                     try {
+
                         JSONObject obj = response.getJSONObject(i);
                         trips.add(obj.getString("name"));
                         tripid = obj.getInt("id");
@@ -70,7 +76,7 @@ public class TripList extends AppCompatActivity {
                         Log.d("Error", exception.toString());
                     }
                 }
-                String[] arr = new String[trips.size()];
+                arr = new String[trips.size()];
                 arr = trips.toArray(arr);
                 ArrayAdapter<String> adapter = new ArrayAdapter<>(
                         TripList.this, android.R.layout.simple_list_item_1,

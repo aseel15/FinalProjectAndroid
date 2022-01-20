@@ -115,6 +115,7 @@ public class Registration extends AppCompatActivity {
     }
 
 
+
     public void btnClkForLogin(View view) {
         Intent intent =new Intent(Registration.this,SignIn.class);
         startActivity(intent);
